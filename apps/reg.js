@@ -1,7 +1,7 @@
 //后台业务
 var getTime=require("../modules/getTime");
 var fs=require("fs");
-
+var db=require("../modules/db");
 
 module.exports.regAddPost=function(req,res){
 		var obj=req.body;
@@ -27,8 +27,20 @@ module.exports.regAddPost=function(req,res){
 						res.send({msg:2});
 					}else{
 						obj.img=imgName;
+						obj.time=id+"";
 						console.log("添加成功,要给数据库的数据是",obj);
-						res.send({msg:0})
+						db.insert(res,"reg",obj,function(err,result,db){
+							if(err){
+								console.log("添加失败");
+								db.close();
+								res.send({msg:4});
+							}else{
+								console.log("添加成功");
+								db.close();
+								res.send({msg:0});
+								//res.redirect(200,"/manage");
+							}
+						});
 					}
 				})
 			}

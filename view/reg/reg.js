@@ -40,6 +40,9 @@ $(function(){
 			processData:false,//不可缺
 			success:function(data){
 				console.log("data:",data);
+				if(data.msg!=0){
+					$("#prompt").html("注册失败!");
+				}
 			},
 			error:function(){
 				//console.log("注册失败!");
