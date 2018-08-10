@@ -2,20 +2,25 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>注册</title>
+		<link rel="icon" href="/logo">
+		<link rel="stylesheet" href="reg.css">
 	</head>
 	<body>
 		<div id="box">
 			<h2>注册</h2>
 			<div>
-				手机号:<input type="text" id="phone" />
-				密码:<input type="text" id="pwd1" />
-				确认密码:<input type="text" id="pwd2" />
+				手机号:<input type="text" id="phone" value="1571155555" />
+				头像:<input type="file" id="file" />
+				密码:<input type="text" id="pwd1" value="2" />
+				确认密码:<input type="text" id="pwd2" value="2" />
 			</div>
 			<div>
 				<button type="button" id="reg">注册</button>
+				<span id="prompt"></span>
 			</div>
 		</div>
 		<script src="/jq"></script>
+		<script src="reg.js"></script>
 	</body>
 </html>

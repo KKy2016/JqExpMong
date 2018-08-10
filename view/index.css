@@ -1,0 +1,10 @@
+body{
+	background-image: url(../img/01.jpg);
+}
+
+#box{
+	width: 40%;
+	margin: auto;
+	text-align: center;
+	margin-top: 10%;
+}
